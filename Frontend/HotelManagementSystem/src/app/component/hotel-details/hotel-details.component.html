@@ -1,0 +1,112 @@
+
+<body style="background-color: silver;">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+    <strong><a class="navbar-brand" href="#">H M S</a></strong>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-target="#Mainmenu"
+      data-bs-toggle="collapse"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Mainmenu">
+      <ul class="navbar-nav mb-2 mt-2 ms-auto">
+        <li class="nav-item">
+          <a (click)="signOut()" class="nav-link">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+/>
+
+
+<br />
+<button class="btn btn-secondary" onclick="history.back()"><i class='bi bi-arrow-return-left'></i> Go Back </button>
+<br><br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <!-- <section>
+        <img src="{{ hotel.hotelImage }}" height="400"
+        width="600"/>
+    </section>
+    <section>
+        <img src="{{ hotel.hotelImage1 }}"  height="400"
+        width="600" />
+    </section>
+    <section>
+        <img src="{{ hotel.hotelImage2 }}" height="400"
+        width="600"/>
+    </section> -->
+
+
+      <img
+        src="{{ hotel.hotelImage }}"
+        height="400"
+        width="600"
+        class="detail-img"
+      />
+    </div>
+    <div class="col">
+      <br />
+      <span
+        style="
+          font-family: 'Times New Roman', Times, serif;
+          font-size: xx-large;
+          font-weight: bolder;
+        "
+        ><b>{{ hotel.hotelName }}</b></span
+      ><br />
+
+      <span
+        style="
+          font-family: 'Times New Roman', Times, serif;
+          font-size: xx-large;
+          font-weight: bolder;
+        "
+        >{{ hotel.hotelPrice | currency : "INR" }} /day</span
+      >
+      <br>
+      <label style="
+      font-family: 'Times New Roman', Times, serif;
+      font-size: xx-large;
+      font-weight: bolder;
+    ">Rooms available :</label>
+      <span
+        style="
+          font-family: 'Times New Roman', Times, serif;
+          font-size: xx-large;
+          font-weight: bolder;
+        "
+        ><b>{{ hotel.noOfRooms }}</b></span
+      >
+      <br /><br />
+      <span
+        style="font-family: 'Times New Roman', Times, serif; font-size: medium"
+        >{{ hotel.hotelDetails }}</span
+      >
+      <br /><br />
+      <div style="text-align: center">
+        <button class="btn  btn-dark" (click)="navigate(hotel.hotelId)">
+          BOOK NOW
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+</body>

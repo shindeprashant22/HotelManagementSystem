@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+  <html >
+  <head>
+    
+    
+  </head>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+      <strong><a class="navbar-brand" href="#">H M S</a></strong>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-target="#Mainmenu"
+        data-bs-toggle="collapse"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Mainmenu">
+        <ul class="navbar-nav mb-2 mt-2 ms-auto">
+          <li class="nav-item">
+            <a routerLink="/user" class="nav-link">Hello {{userName}} !</a>
+          </li><br>
+          <li class="nav-item">
+            <a onclick="history.back()" class="nav-link">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+  <body style="background-color: silver;">
+    
+  
+  <br><br>
+<h1 style="text-align: center;">Welcome to H M S</h1><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-success" (click)="navigate()">View User Details</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="navigateToHotel()">View Hotel Details</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="navigateToLocation()">View Location Details</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="navigateToBooking()">View Booking Details</button>
+        </div><br>
+        
+        <div class="col">
+          <button class="btn btn-success" (click)="navigateToPayment()">View Payment Details</button>
+      </div><br>
+        
+      
+       <br><br>
+       
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
+

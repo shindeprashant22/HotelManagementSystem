@@ -1,0 +1,36 @@
+<body style="background-color: silver;">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div class="container-fluid">
+        <strong><a class="navbar-brand" href="#">H M S</a></strong>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-target="#Mainmenu"
+          data-bs-toggle="collapse"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Mainmenu">
+          <ul class="navbar-nav mb-2 mt-2 ms-auto">
+            <li class="nav-item">
+              <a (click)="signOut()" class="nav-link">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br><br><br><br><br>
+    <div class="container">
+    <h1 style="margin-left: 20%;">CLICK ON YES TO PROCEED WITH PAYMENT</h1><br>
+    <button class="btn btn-success" (click)="makePayment()" style="margin-left: 50%;">Yes</button><br><br>
+    <h1 style="margin-left: 23%;">CLICK ON NO TO GO BACK</h1><br>
+    <button class="btn btn-danger" routerLink="/user" style="margin-left: 50%;" >No</button>
+     
+    <!-- <button class="btn btn-success" (click)="makePayment()" style="margin-left: 50%;">Yes</button> -->
+    <!-- <button class="btn btn-danger" routerLink="/user" style="margin-left: 50%;" >No</button> -->
+    </div>
+    </body>
+    

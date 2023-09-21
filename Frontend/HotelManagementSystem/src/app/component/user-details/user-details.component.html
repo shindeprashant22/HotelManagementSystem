@@ -1,0 +1,148 @@
+<body style="background-color: silver;">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+      <strong><a class="navbar-brand" href="#">H M S</a></strong>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-target="#Mainmenu"
+        data-bs-toggle="collapse"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Mainmenu">
+        <ul class="navbar-nav mb-2 mt-2 ms-auto">
+          <li class="nav-item">
+            <a (click)="signOut()" class="nav-link">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--<form (ngSubmit)="onSubmit()">
+    <div class="form-outline mb-4">
+      <input type="text" 
+      id="userName"
+      [(ngModel)]="userName"
+      name="userName" 
+      class="form-control" />
+      <label class="form-label" for="form5Example1">Name</label>
+    </div>
+    <div class="form-outline mb-4">
+      <input type="text" 
+      id="userEmail"
+      [(ngModel)]="userEmail"
+      name="userEmail"
+      placeholder="Email Address"
+      class="form-control" />
+      <label class="form-label" for="form5Example1">Email</label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input type="text" 
+      id="userPhno"
+      [(ngModel)]="userPhno"
+      name="userPhno"
+      placeholder="Contact Number"
+      class="form-control" />
+      <label class="form-label" for="form5Example1">Contact Number</label>
+    </div>
+    <div class="form-outline mb-4">
+      <input type="text" 
+      id="userAddress"
+      [(ngModel)]="userAddress"
+      name="userAddress"
+     placeholder="Address"
+      class="form-control" />
+      <label class="form-label" for="form5Example1">Address</label>
+    </div>
+
+    <br><br> 
+    <button type="submit" class="btn btn-primary btn-block mb-4">Confirm</button>
+  </form> -->
+
+  <section class="vh-100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 text-black">
+  
+          <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+            
+            <form (ngSubmit)="onSubmit()" style="width: 23rem;">
+
+              <h4 class="fw-normal mb-3 pb-3" style="color: #000000;">PLEASE CONFIRM YOUR DETAILS</h4>
+  
+                <div class="form-outline mb-4">
+                  <input type="text" 
+                  id="userName"
+                  [(ngModel)]="userName"
+                  name="userName" 
+                  class="form-control" />
+                  <label class="form-label" for="form5Example1">Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" 
+                  id="userEmail"
+                  [(ngModel)]="userEmail"
+                  name="userEmail"
+                  placeholder="Email Address"
+                  class="form-control" />
+                  <label class="form-label" for="form5Example1">Email</label>
+                </div>
+          
+                <div class="form-outline mb-4">
+                  <input type="text" 
+                  id="userPhno"
+                  [(ngModel)]="userPhno"
+                  name="userPhno"
+                  placeholder="Contact Number"
+                  class="form-control" />
+                  <label class="form-label" for="form5Example1">Contact Number</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" 
+                  id="userAddress"
+                  [(ngModel)]="userAddress"
+                  name="userAddress"
+                 placeholder="Address"
+                  class="form-control" />
+                  <label class="form-label" for="form5Example1">Address</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" 
+                  id="price"
+                  [(ngModel)]="price"
+                  name="price"
+                 placeholder="price"
+                  class="form-control" readonly />
+                  <label class="form-label" for="form5Example1">Price</label>
+                </div>
+            
+  
+              <div class="pt-1 mb-4">
+                <button class="btn btn-primary" type="submit">Confirm</button>
+              </div>
+            </form>
+  
+          </div>
+  
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="../../assets/confirm.jpg"
+            alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+        </div>
+      </div>
+    </div>
+  </section>
+                 
+
+
+
+
+
+  </body>

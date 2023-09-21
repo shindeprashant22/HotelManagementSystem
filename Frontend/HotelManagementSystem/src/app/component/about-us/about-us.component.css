@@ -1,0 +1,33 @@
+body {
+    background-color: silver;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  
+  .first {
+    text-align: center;
+  }
+  
+  .first h2 {
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .first h4 {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .btn-go-back {
+    margin-bottom: 10px;
+  }

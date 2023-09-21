@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Niconne&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+      <strong><a class="navbar-brand" routerLink="">H M S</a></strong>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse show" id="navbarNavDropdown">
+        <ul class="navbar-nav mb-2 mt-1 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink=""
+              >Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]="['active']"></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <body style="background-color: rgb(88, 122, 88)">
+
+    <section class="vh-100" style="background-color: #c5a2be">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                      Register Here
+                      <i class="fas fa-pencil-alt"></i>
+                    </p>
+
+                    <form #regForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+                      <div
+                        *ngIf="name.errors?.['required'] && name.touched"
+                        style="color: red"
+                      >
+                        *please enter name
+                      </div>
+                      <div
+                        *ngIf="name.errors?.['minlength']&& name.touched"
+                        class="danger"
+                        style="color: red"
+                      >
+                        *please enter atleast 3 characters
+                      </div>
+                      <div class="info">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          [(ngModel)]="user.userName"
+                          name="name"
+                          required
+                          minlength="3"
+                          maxlength="20"
+                          #name="ngModel"
+                          placeholder="Full Name"
+                        /><br />
+                        <div
+                          *ngIf="address.errors?.['required']&& address.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter address
+                        </div>
+                        <div
+                          *ngIf="address.errors?.['minlength']&& address.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter atleast 3 characters
+                        </div>
+                      
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="address"
+                          [(ngModel)]="user.userAddress"
+                          name="address"
+                          #address="ngModel"
+                          required
+                          minlength="3"
+                          maxlength="20"
+                          placeholder="Address"
+                        /><br />
+
+                        <div
+                          *ngIf="contactNumber.errors?.['required']&& contactNumber.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter contact number
+                        </div>
+                        <div
+                          *ngIf="contactNumber.errors?.['minlength(10)']&&contactNumber.errors?.['maxlength(10)']&& contactNumber.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter 10 digits
+                        </div>
+                       
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="contactNumber"
+                          [(ngModel)]="user.userPhno"
+                          name="contactNumber"
+                          #contactNumber="ngModel"
+                          required
+                          minlength="10"
+                          maxlength="10"
+                          placeholder="Contact Number"
+                        /><br />
+                        <div
+                          *ngIf="email.errors?.['required']&& email.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter email
+                        </div>
+                        <div
+                          *ngIf="email.errors?.['minlength']&& email.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter special characters
+                        </div>
+             
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          [(ngModel)]="user.userEmail"
+                          name="email"
+                          #email="ngModel"
+                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                          required
+                          aria-describedby="emailHelp"
+                          minlength="15"
+                          maxlength="30"
+                          placeholder="Email"
+                        /><br />
+                        <div
+                          *ngIf="password.errors?.['required'] && password.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *please enter password
+                        </div>
+                        <div
+                          *ngIf="password.errors?.['minlength'] && password.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *password must be at least 6 characters long
+                        </div>
+                        <div
+                          *ngIf="password.errors?.['pattern'] && password.touched"
+                          class="danger"
+                          style="color: red"
+                        >
+                          *password must contain at least one special character,
+                          one letter, and one number
+                        </div>
+                       
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          [(ngModel)]="user.userPassword"
+                          name="password"
+                          #password="ngModel"
+                          required
+                          minlength="6"
+                          pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
+                          placeholder="Password"
+                        />
+                        <br />
+
+                        <select
+                          class="form-control"
+                          name="userType"
+                          [(ngModel)]="user.userType"
+                          required
+                        >
+                          <option value="choose " disabled selected>
+                            Select User Type
+                          </option>
+                          <option value="CUSTOMER">Customer</option>
+                          <option value="ADMIN">Admin</option>
+                        </select>
+                        <br />
+                      </div>
+
+                      <button
+                        class="btn  mb-2 text-danger"
+                        [disabled]="!regForm.valid"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                  <div
+                    class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-vector/friendly-smiling-woman-administrator-receptionist-reception-desk-giving-key-from-hotel-room-man-guest-with-luggage-bag-hall-lobby-interior_575670-698.jpg "
+                      class="img-fluid"
+                      alt="Sample image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

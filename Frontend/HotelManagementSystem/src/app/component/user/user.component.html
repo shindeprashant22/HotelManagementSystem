@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/0bb7bd49e9.css" crossorigin="anonymous">
+
+</head>
+<body style="background-color: silver">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+      <strong><a class="navbar-brand" href="#">H M S</a></strong>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-target="#Mainmenu"
+        data-bs-toggle="collapse"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Mainmenu">
+        <ul class="navbar-nav mb-2 mt-2 ms-auto">
+          <li class="nav-item">
+            <a routerLink="/user" class="nav-link">Hello {{userName}} !</a>
+          </li><br>
+          <li class="nav-item">
+            <a routerLink="/wishlist/:id" class="nav-link">Favorites ❤️</a>
+          </li><br>
+          <li class="nav-item">
+            <a (click)="signOut()"  class="nav-link">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <br />
+  
+  <h2 style="text-align: center; ">WELCOME TO HOTEL MANAGEMENT SYSTEM</h2>
+  <br>
+  <div class="form-group">
+    <div class="col-md-8">
+      <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search By Location" />
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchHotelsByLocation()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br />
+
+<!-- Add the following div to show the message when no hotels are found -->
+<div class="container" *ngIf="hotel.length === 0 && searchText">
+  <p>Hotels not found for the given location.</p>
+</div>
+<div class="main">
+  <br>
+<div class="cards" *ngFor="let h of hotel  | location:searchText">
+    <!-- <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+      <img src="{{ h.hotelImage}}" class="img-fluid" width="500" height="200"/>
+      <br> -->
+     
+        <!-- <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div> -->
+     
+    <!-- </div> -->
+    <div class="container">
+   <div id="Image">
+      <img src="{{ h.hotelImage}}"
+          class="rounded" alt="GFG">
+      <div class="text-center mx-auto mt-5 format">
+        <b> <h5 class="card-title">{{ h.hotelName }}</h5> </b>
+        <br>
+          <b>Location:</b>{{h.hotelAddress}} 
+        <br>
+         
+          <b>Price:</b>{{h.hotelPrice}} 
+         <br>
+         
+          <b>Rating:</b>{{h.rating}} 
+          <br>
+
+          <i (click)="navigateToWishlist(h.hotelId)"  class="fa fa-heart" style="font-size:30px;color:rgb(237, 14, 14)"></i>
+         
+          <br>
+          <button class="btn" (click)="navigateToDetails(h.hotelId)"
+          class="btn btn-success btn-md" title="view hotel details" >
+            View Details
+          </button>
+
+      </div>
+    
+        
+  </div>
+
+</div>
+    <div class="card-body">
+      
+        <!-- <b> <h5 class="card-title">{{ h.hotelName }}</h5> </b><br> -->
+        <div class="row">
+         <!-- <div class="col">
+   
+        <span style="margin-left: 30%;">
+         <b>Location:</b>{{h.hotelAddress}} 
+        </span>
+        <span  style="margin-left: 30%;">
+         <b>Price:</b>{{h.hotelPrice}} 
+        </span>
+        <span  style="margin-left: 30%;">
+         <b>Rating:</b>{{h.rating}} 
+        </span>
+       </div> -->
+     
+       </div><br>
+     
+    
+       <div class="container text-center">
+        <!-- <a href="hotel-details" class="btn btn-primary btn-md">View Details</a> -->
+        
+  
+       </div>
+       
+       
+       <br>
+      </div>
+    </div>
+    
+    <br>
+  </div>
+</body>
+</html>

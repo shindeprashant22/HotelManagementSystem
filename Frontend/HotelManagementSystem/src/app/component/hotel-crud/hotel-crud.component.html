@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+        <html>
+            <head>
+            
+            <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>    
+            </head>
+            <body style="background-color: silver;">
+
+              <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <div class="container-fluid">
+                  <strong><a class="navbar-brand" href="#">H M S</a></strong>
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-target="#Mainmenu"
+                    data-bs-toggle="collapse"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="Mainmenu">
+                    <ul class="navbar-nav mb-2 mt-2 ms-auto">
+                      <li class="nav-item">
+                        <a routerLink="/login" class="nav-link">Log Out</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              
+              <br />
+
+ <button class="btn btn-secondary" onclick="history.back()"><i class='bi bi-arrow-return-left'></i> Go Back </button>
+<br><br>
+<button class="btn" (click)="navigate()">Add Hotel</button>
+<br><br>
+<table class="table table-bordered table-stripped table-hover">
+  <thead class="text-white bg-dark">
+
+    <tr class="bg-dark">
+      <th>Hotel ID</th>
+      <th>Hotel Name</th>
+      <th>Hotel Address</th>
+      <th>Hotel Image</th>
+      <th>Hotel Price</th>
+      <th>No of Rooms</th>
+      <th>Location Id</th>
+      
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody style="background-color: aliceblue;">
+
+    <tr *ngFor="let h of hotel | paginate: { itemsPerPage: count, currentPage: p }">
+      <td>{{ h.hotelId }}</td>
+      <td>{{ h.hotelName }}</td>
+      <td>{{ h.hotelAddress }}</td>
+      <td><img src="{{ h.hotelImage}}" height="100" width="200" /></td>
+      <td>{{ h.hotelPrice }}</td>
+      <td>{{ h.noOfRooms }}</td>
+      <td>{{ h.locationId }}</td>
+     
+
+      <td>
+        <button (click)="navigateToUpdate(h.hotelId)"
+        class="btn btn-success btn-md" title="update this hotel" >
+          Update
+        </button>
+
+        <button
+          (click)="deleteHotel(h.hotelId)"
+          class="btn btn-danger btn-md"
+          title="delete this user"
+          onclick="if(!(confirm('Are you sure you want to delete this hotel')))
+          return false"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--Including the pagination control.-->
+<div class="text-right">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</body>
+</html>

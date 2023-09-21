@@ -1,0 +1,48 @@
+.footer-distributed {
+    background-color: #2c3e50;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    display: flex; /* This will make the elements inside the footer display horizontally */
+    justify-content: space-between; /* This will evenly distribute the content in the footer */
+    align-items: center; /* This will align the content vertically at the center */
+    padding: 2rem;
+    color: white;
+}
+
+.footer-left h3 {
+    color: #ffffff;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-center i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: white;
+}
+
+.footer-right .footer-company-about {
+    color: white;
+    max-width: 320px;
+}
+
+.footer-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    border-radius: 50%;
+    background-color: #1a233a;
+    padding: 8px;
+}
+
+/* Responsive footer styles for smaller screens */
+@media (max-width: 768px) {
+    .footer-distributed {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-left, .footer-center, .footer-right {
+        margin-bottom: 1rem;
+    }
+}

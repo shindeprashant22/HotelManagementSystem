@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>    
+</head>
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+      <strong><a class="navbar-brand" href="#">H M S</a></strong>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-target="#Mainmenu"
+        data-bs-toggle="collapse"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Mainmenu">
+        <ul class="navbar-nav mb-2 mt-2 ms-auto">
+          <li class="nav-item">
+            <a routerLink="/login" class="nav-link">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <br />
+  <button onclick="history.back()"><i class='bi bi-arrow-return-left'></i> Go Back </button>
+  <br>
+
+  <div class="create-form">
+    <br><br>
+    <h1><strong>Form To Update User</strong></h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          [(ngModel)]="user.userName"
+          name="name"
+          placeholder="User Name"
+        />
+      </div>
+     
+        <div class="form-group">
+        <label>User Address</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userAddress"
+          [(ngModel)]="user.userAddress"
+          name="userAddress"
+          placeholder="User Address"
+        />
+      </div>
+      <div class="form-group">
+        <label>User Contact Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userPhno"
+          [(ngModel)]="user.userPhno"
+          name="userPhno"
+          placeholder="User Contact Number"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>User Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userEmail"
+          [(ngModel)]="user.userEmail"
+          name="userEmail"
+          placeholder="User Email"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>User Password</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userPassword"
+          [(ngModel)]="user.userPassword"
+          name="userPassword"
+          placeholder="User Password"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>User Type</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userType"
+          [(ngModel)]="user.userType"
+          name="userType"
+          placeholder="User Type"
+        />
+      </div>
+      <br>
+  
+      <button class="btn btn-success" type="submit">Update User</button>
+    </form>
+  </div>
+
+</body>
+
+  </html>
+
+  <!-- <section class="vh-80 bg-image"
+  style="background-image: url('../../assets/room9.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Form To Add A New User</h2>
+
+              <form  (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-4">
+                  <input type="text"  id="userName"
+                  [(ngModel)]="user.userName"
+                  name="name" class="form-control form-control-lg" />
+                  <label class="form-label" for="userName">User Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text"  id="userAddress"
+                  [(ngModel)]="user.userAddress"
+                  name="userAddress" class="form-control form-control-lg" />
+                  <label class="form-label" for="userAddress">User Address</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="number"  id="userPhno"
+                  [(ngModel)]="user.userPhno"
+                  name="userPhno" class="form-control form-control-lg" />
+                  <label class="form-label" for="userPhno">User Contact Number</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email"  id="userEmail"
+                  [(ngModel)]="user.userEmail"
+                  name="userEmail" class="form-control form-control-lg" />
+                  <label class="form-label" for="userEmail">User Email</label>
+                </div>
+
+                
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="userPassword"
+                  [(ngModel)]="user.userPassword"
+                  name="userPassword" class="form-control form-control-lg" />
+                  <label class="form-label" for="userPassword">User password</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="userType"
+                  [(ngModel)]="user.userType"
+                  name="userType" class="form-control form-control-lg" />
+                  <label class="form-label" for="userType">User Type</label>
+                </div>
+
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add User</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0"><a href="user-crud"
+                    class="fw-bold text-body"><u> Go back to users details</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

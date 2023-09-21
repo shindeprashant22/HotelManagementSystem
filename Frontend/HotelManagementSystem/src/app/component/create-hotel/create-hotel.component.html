@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div class="container-fluid">
+        <strong><a class="navbar-brand" href="#">H M S</a></strong>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-target="#Mainmenu"
+          data-bs-toggle="collapse"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Mainmenu">
+          <ul class="navbar-nav mb-2 mt-2 ms-auto">
+            <li class="nav-item">
+              <a routerLink="/login" class="nav-link">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br />
+    <section class="vh-100" style="background-color: #2779e2">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-9">
+            <h1 class="text-white mb-4 text-center">Add A New Hotel</h1>
+
+            <div class="card" style="border-radius: 15px">
+              <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Hotel Name</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="hotelName"
+                        [(ngModel)]="hotel.hotelName"
+                        name="hotelName"
+                        placeholder="write a Hotel name"
+                      />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Hotel Address</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="hotelAddress"
+                        [(ngModel)]="hotel.hotelAddress"
+                        name="hotelAddress"
+                        placeholder="write a Hotel address"
+                      />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Hotel Image</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="hotelImg"
+                        [(ngModel)]="hotel.hotelImage"
+                        name="hotelImg"
+                        placeholder="image url link paste here"
+                      />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Hotel Price</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                      type="text"
+                      class="form-control"
+                      id="hotelPrice"
+                      [(ngModel)]="hotel.hotelPrice"
+                      name="hotelPrice"
+                      placeholder="write a hotel room  Price"
+                    />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">No.of Rooms</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="noOfRooms"
+                        [(ngModel)]="hotel.noOfRooms"
+                        name="noOfRooms"
+                        placeholder="No of rooms which available"
+                      />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Location Id</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <select
+                      ngModel
+                      name="l"
+                      #l="ngModel"
+                      required
+                      class="form-control"
+                      id="locationId"
+                      [(ngModel)]="hotel.locationId"
+                      name="locationId"
+                    >
+                      <option *ngFor="let l of location">
+                        {{ l.locationId }}
+                      </option>
+                    </select>
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Hotel Details</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="hotelDetails"
+                        [(ngModel)]="hotel.hotelDetails"
+                        name="hotelDetails"
+                        placeholder=" write a clearly Hotel Details"
+                      />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Hotel Rating</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="rating"
+                        [(ngModel)]="hotel.rating"
+                        name="rating"
+                        placeholder="Rating of your Hotel"
+                      />
+                    </div>
+                  </div>
+
+                  <hr class="mx-n1" />
+
+                  <div class="px-5 py-4">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      Add Hotel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
